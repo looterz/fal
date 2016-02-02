@@ -13,4 +13,4 @@ removeAllWeapons _unit;
 _unit setVariable ["stashed", true, false];
 _unit addRating 10000;
 
-hint format["Concealing weapons\nStashed %1", _unit getVariable "stashed"];
+hint format["Concealing weapons"];

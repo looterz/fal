@@ -1,5 +1,7 @@
 # Faloti ArmA 3 Script Library
 
+A library of commonly used scripts and functions in FALOTI ArmA 3 missions.
+
 ##Install
 
 Download or clone the repo, and place the "fal" directory into your mission folder.

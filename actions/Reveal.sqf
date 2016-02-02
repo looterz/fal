@@ -18,4 +18,4 @@ _unit setVariable ["ammoStash", [], false];
 _unit setVariable ["stashed", false, false];
 _unit addRating -10000;
 
-hint format["Revealing weapons\nStashed %1", _unit getVariable "stashed"];
+hint format["Revealing weapons"];
