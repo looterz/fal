@@ -2,7 +2,7 @@
 
 ##Install
 
-Download or clone the fal folder into your mission folder.
+Download or clone the repo folder into your mission folder.
 
 ##Usage
 
