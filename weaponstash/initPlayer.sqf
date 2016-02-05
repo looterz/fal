@@ -1,3 +1,4 @@
+if (isDedicated) exitWith {};
 waitUntil {!isNull player};
 
 player setVariable ["stashed", false, false];
