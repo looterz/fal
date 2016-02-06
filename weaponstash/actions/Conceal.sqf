@@ -36,5 +36,3 @@ player setVariable ["ammoStash", _ammoStash, false];
 player setVariable ["helmetStash", _helmetStash, false];
 player setVariable ["stashed", true, false];
 player setCaptive true;
-
-hint format["Concealing weapons"];

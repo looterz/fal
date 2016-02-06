@@ -25,5 +25,3 @@ player setVariable ["ammoStash", [], false];
 player setVariable ["helmetStash", "", false];
 player setVariable ["stashed", false, false];
 player setCaptive false;
-
-hint format["Revealing weapons"];
