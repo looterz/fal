@@ -1,4 +1,4 @@
-private ["_actionID", "_weaponsArray", "_ammoArray", "_weaponStash", "_ammoStash"];
+private ["_actionID", "_weaponsArray", "_ammoArray", "_helmet", "_weaponStash", "_ammoStash", "_helmetStash"];
 
 _actionID = _this select 2;
 
@@ -24,8 +24,16 @@ _ammoStash = [];
   };
 } forEach _ammoArray;
 
+_helmet = headgear player;
+
+if (_helmet != "") then {
+  _helmetStash = _helmet;
+  player removeHeadgear _helmet;
+};
+
 player setVariable ["weaponStash", _weaponStash, false];
 player setVariable ["ammoStash", _ammoStash, false];
+player setVariable ["helmetStash", _helmetStash, false];
 player setVariable ["stashed", true, false];
 player setCaptive true;
 
