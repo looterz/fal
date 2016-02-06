@@ -8,9 +8,9 @@ Download or clone the repo, and place the "fal" directory into your mission fold
 
 ##Usage
 
-To use the weapon concealment system, add this to all playable units init field in the editor.
+To use the weapon concealment system, add this to the missions init.sqf.
 ```
-null = [this] execVM "fal\weaponstash\initPlayer.sqf";
+[] execVM "fal\weaponstash\init.sqf";
 ```
 
 ##Features
