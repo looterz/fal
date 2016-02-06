@@ -28,7 +28,7 @@ _helmet = headgear player;
 
 if (_helmet != "") then {
   _helmetStash = _helmet;
-  player removeHeadgear _helmet;
+  removeHeadgear player;
 };
 
 player setVariable ["weaponStash", _weaponStash, false];
