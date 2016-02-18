@@ -12,30 +12,52 @@ _ammoArray = magazines player;
 _weaponStash = [];
 _ammoStash = [];
 
+if (isNil "_weaponItems") then
 {
-  if (isClass(configFile >> "CfgWeapons" >> _x)) then {
-    _weaponStash pushBack _x;
-    player removeWeapon _x;
-  };
-} forEach _weaponsArray;
+  _weaponItems = [];
+};
 
+if (isNil "_weaponItemsTwo") then
 {
-  if (isClass(configFile >> "CfgMagazines" >> _x)) then {
-    _ammoStash pushBack _x;
-    player removeMagazine _x;
-  };
-} forEach _ammoArray;
+  _weaponItemsTwo = [];
+};
+
+if (not isNil "_weaponsArray" && count _weaponsArray > 0) then
+{
+  {
+    if (isClass(configFile >> "CfgWeapons" >> _x)) then
+    {
+      _weaponStash pushBack _x;
+      player removeWeapon _x;
+    };
+  } forEach _weaponsArray;
+};
+
+if (not isNil "_ammoArray" && count _ammoArray > 0) then
+{
+  {
+    if (isClass(configFile >> "CfgMagazines" >> _x)) then
+    {
+      _ammoStash pushBack _x;
+      player removeMagazine _x;
+    };
+  } forEach _ammoArray;
+};
 
 _helmet = headgear player;
+_helmetStash = "";
 
-if (_helmet != "") then {
+if (_helmet != "") then
+{
   _helmetStash = _helmet;
   removeHeadgear player;
 };
 
 _eyes = goggles player;
+_eyeStash = "";
 
-if (_eyes != "") then {
+if (_eyes != "") then
+{
   _eyeStash = _eyes;
   removeGoggles player;
 };

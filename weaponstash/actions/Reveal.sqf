@@ -2,14 +2,17 @@ private ["_actionID", "_weaponStash", "_weaponItems", "_weaponItemsTwo", "_ammoS
 
 _actionID = _this select 2;
 
-player removeAction _actionID;
+if (not isNil "_actionID") then
+{
+  player removeAction _actionID;
+};
 
-_weaponStash = player getVariable "weaponStash";
-_weaponItems = player getVariable "weaponItemsStash";
-_weaponItemsTwo = player getVariable "weaponItemsStashTwo";
-_ammoStash = player getVariable "ammoStash";
-_helmetStash = player getVariable "helmetStash";
-_eyeStash = player getVariable "eyeStash";
+_weaponStash = player getVariable ["weaponStash", []];
+_weaponItems = player getVariable ["weaponItemsStash", []];
+_weaponItemsTwo = player getVariable ["weaponItemsStashTwo", []];
+_ammoStash = player getVariable ["ammoStash", []];
+_helmetStash = player getVariable ["helmetStash", ""];
+_eyeStash = player getVariable ["eyeStash", ""];
 
 {
   player addWeapon _x;
@@ -27,13 +30,15 @@ _eyeStash = player getVariable "eyeStash";
   player addMagazine _x;
 } forEach _ammoStash;
 
-if (_helmetStash != "") then {
+if (_helmetStash != "") then
+{
   player addHeadgear _helmetStash;
 };
 
-if (_eyeStash != "") then {
+if (_eyeStash != "") then
+{
   player addGoggles _eyeStash;
-}
+};
 
 player setVariable ["weaponStash", [], false];
 player setVariable ["weaponItemsStash", [], false];
